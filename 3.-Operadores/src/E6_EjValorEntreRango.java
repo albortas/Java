@@ -9,6 +9,6 @@ public class E6_EjValorEntreRango {
         // Verificamos si el dato esta dentro de rango
         boolean dentroRango = dato >= minimo && dato <= maximo;
         System.out.println("Valor dentro de rango? " +dentroRango);
-        
+        consola.close();
     }
 }
