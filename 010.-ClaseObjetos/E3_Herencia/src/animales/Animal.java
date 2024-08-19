@@ -2,35 +2,35 @@ package animales;
 
 public class Animal {
     //Metodos
-    public void comer(){
+    protected void comer(){
         System.out.println("Como muchas vez al dia");
     }
 
-    public void dormir(){
+    protected void dormir(){
         System.out.println("Duermo muchas horas");
     }
 
-    public void hacerSonido(){
+    protected void hacerSonido(){
         System.out.println("El animal hace un sonido");
     }
 } // fin clase Animal
 
 class Perro extends Animal{
-    public void hacerSonido(){
+    protected void hacerSonido(){
         System.out.println("Puedo ladrar");
     }
     @Override
-    public void dormir(){
+    protected void dormir(){
         System.out.println("Duermo 15 horas al dia");
         System.out.println("Metodo clase padre: " );
-        super.dormir();
+        super.dormir(); //Aceder metodo dormir de la clase padre
     }
 
 }
 
 class Gato extends Animal{
     @Override
-    public void hacerSonido(){
+    protected void hacerSonido(){
         System.out.println("Puedo maullar");
     }
 }

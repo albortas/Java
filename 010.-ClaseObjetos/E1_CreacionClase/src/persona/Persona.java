@@ -9,6 +9,7 @@ public class Persona extends Object{
     public Persona(String nombre, String apellido){
         this.nombre = nombre;
         this.apellido = apellido;
+        //Incrementar el atributo estatico
         this.idPersona = ++Persona.contadorPersona;
     }
 
@@ -49,5 +50,6 @@ public class Persona extends Object{
         return Persona.contadorPersona;
     }
 
-    
+
+
 }

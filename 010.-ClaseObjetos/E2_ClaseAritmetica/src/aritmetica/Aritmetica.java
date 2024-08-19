@@ -17,12 +17,12 @@ public class Aritmetica {
 
     //Metodos
     public void sumar(){
-        int resultado = operando1 + operando2;
+        int resultado = this.operando1 + this.operando2;
         System.out.println("Resultado de la suma: " + resultado);
     }
 
     public void restar(){
-        int resultado = operando1 - operando2;
+        int resultado = this.operando1 - this.operando2;
         System.out.println("Resultado de la resta: " + resultado);
     }
     //Metodos get y set
