@@ -15,7 +15,7 @@ public class PruebaVentas {
         orden2.agregarProducto(new Producto("Playera",15.00));
         orden2.agregarProducto(producto2);
         orden2.agregarProducto(producto1);
-        //orden2.mostrarOrden();
         System.out.println(orden2);
+        //orden2.mostrarOrden();
     }
 }
