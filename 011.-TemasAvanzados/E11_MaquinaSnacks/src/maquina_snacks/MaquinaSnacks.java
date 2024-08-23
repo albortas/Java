@@ -1,3 +1,5 @@
+package maquina_snacks;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -11,7 +13,7 @@ public class MaquinaSnacks {
         var consola = new Scanner(System.in);
         //Crear la lista de productos del snack
         List<Snack> productos = new ArrayList<>();
-        System.out.println("*** Maquina de Snack ***");
+        System.out.println("*** Maquina de maquina_snacks.Snack ***");
         while (!salir){
             try{
                 var opcion = mostrarMenu(consola);
@@ -53,12 +55,12 @@ public class MaquinaSnacks {
     public static void comprarSnack(Scanner consola, List<Snack> productos){
         System.out.print("Que snack quieres comprar (Id) ?: ");
         var idSnack = Integer.parseInt(consola.nextLine());
-        //Validar si existe es id se Snack
+        //Validar si existe es id se maquina_snacks.Snack
         var snackEncontrado = false;
         for (Snack snack : Snacks.getSnacks()){
             if (idSnack == snack.getIdSnack()){
                 productos.add(snack);
-                System.out.println("Ok. Snack agregado: " + snack);
+                System.out.println("Ok. maquina_snacks.Snack agregado: " + snack);
                 snackEncontrado = true;
                 break;
             }

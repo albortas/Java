@@ -1,3 +1,5 @@
+package maquina_snacks;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -21,7 +23,7 @@ public class Snacks {
         for (Snack snack : snacks){
             mostrar += snack.toString() + "\n";
         }
-        System.out.println("*** Snack en inventario ***");
+        System.out.println("*** maquina_snacks.Snack en inventario ***");
         System.out.println(mostrar);
     }
     public static List<Snack> getSnacks(){

@@ -1,3 +1,5 @@
+package maquina_snacks;
+
 import java.io.Serializable;
 import java.util.Objects;
 
@@ -47,7 +49,7 @@ public class Snack implements Serializable {
     //Metodo toString
     @Override
     public String toString() {
-        return "Snack{" +
+        return "maquina_snacks.Snack{" +
                 "idSnack=" + idSnack +
                 ", nombre='" + nombre + '\'' +
                 ", precio=" + precio +
