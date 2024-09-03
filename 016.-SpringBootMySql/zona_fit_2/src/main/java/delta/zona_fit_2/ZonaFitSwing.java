@@ -1,11 +1,10 @@
-package shadow.zona_fit;
+package delta.zona_fit_2;
 
 import com.formdev.flatlaf.FlatDarculaLaf;
 import org.springframework.boot.WebApplicationType;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.context.ConfigurableApplicationContext;
-import shadow.zona_fit.gui.ZonaFitForma;
 
 import javax.swing.*;
 
@@ -17,12 +16,12 @@ public class ZonaFitSwing {
         //Instanciar la fabrica de Spring
         ConfigurableApplicationContext contextoSpring =
                 new SpringApplicationBuilder(ZonaFitSwing.class)
-                .headless(false)
-                .web(WebApplicationType.NONE)
-                .run(args);
+                        .headless(false)
+                        .web(WebApplicationType.NONE)
+                        .run(args);
         //Crear un objeto de Swing
         SwingUtilities.invokeLater(() ->{
-            ZonaFitForma zonaFitForma = contextoSpring.getBean(ZonaFitForma.class);
+            delta.zona_fit_2.gui.ZonaFitForma zonaFitForma = contextoSpring.getBean(delta.zona_fit_2.gui.ZonaFitForma.class);
             zonaFitForma.setVisible(true);
         });
     }

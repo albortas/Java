@@ -1,32 +1,31 @@
-package shadow.zona_fit;
+package delta.zona_fit_2;
+
+import delta.zona_fit_2.modelo.Cliente;
+import delta.zona_fit_2.servicio.IClienteServicio;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import shadow.zona_fit.modelo.Cliente;
-import shadow.zona_fit.servicio.IClienteServicio;
 
-import java.util.List;
 import java.util.Scanner;
 
-
-@SpringBootApplication
-public class ZonaFitApplication implements CommandLineRunner {
+//@SpringBootApplication
+public class ZonaFit2Application implements CommandLineRunner {
 
 	@Autowired
 	private IClienteServicio clienteServicio;
 
-	private static final Logger logger = LoggerFactory.getLogger(ZonaFitApplication.class);
+	private static final Logger logger = LoggerFactory.getLogger(ZonaFit2Application.class);
 
 	String nl = System.lineSeparator();
 
 	public static void main(String[] args) {
 		logger.info("Inciando la aplicacion");
-		//Levantar la fabrica de spring
-		SpringApplication.run(ZonaFitApplication.class, args);
-		logger.info("Aplicacion finalizada!!!");
+		//Levantar la fabrica de Spring
+		SpringApplication.run(ZonaFit2Application.class, args);
+		logger.info("Aplicacion finalizada");
 	}
 
 	@Override
@@ -44,7 +43,7 @@ public class ZonaFitApplication implements CommandLineRunner {
 				salir = ejecutarOpciones(opcion,consola);
 			}
 		}catch (Exception e){
-            logger.info("Error en el menu: {}", e.getMessage());
+			logger.info("Error en el menu: {}", e.getMessage());
 		}finally {
 			logger.info("\n");
 		}
@@ -78,9 +77,9 @@ public class ZonaFitApplication implements CommandLineRunner {
 				var id = Integer.parseInt(consola.nextLine());
 				var cliente = clienteServicio.buscarClientePorId(id);
 				if (cliente != null){
-                	logger.info("Cliente encontrado: {}", cliente);
+					logger.info("Cliente encontrado: {}", cliente);
 				}else
-                    logger.info("No se encontro el cliente: {}", cliente);
+					logger.info("No se encontro el cliente: {}", cliente);
 			}
 			case 3 ->{
 				logger.info("\n--- Agregar un cliente ---\n");
@@ -92,14 +91,14 @@ public class ZonaFitApplication implements CommandLineRunner {
 				var membresia = Integer.parseInt(consola.nextLine());
 				var cliente = new Cliente(null, nombre, apellido, membresia);
 				clienteServicio.guardarCliente(cliente);
-                logger.info("\nSe ha agredo el cliente: {}", cliente);
+				logger.info("\nSe ha agredo el cliente: {}", cliente);
 			}
 			case 4 ->{
 				logger.info("\nId de cliente a modificar: ");
 				var id = Integer.parseInt(consola.nextLine());
 				var cliente = clienteServicio.buscarClientePorId(id);
 				if (cliente == null){
-                    logger.info("\nNo existe el cliente a modificar: {}", cliente);
+					logger.info("\nNo existe el cliente a modificar: {}", cliente);
 				}else{
 					logger.info("\nCliente : {}\n", cliente);
 					logger.info("Nuevo nombre: ");
@@ -110,7 +109,7 @@ public class ZonaFitApplication implements CommandLineRunner {
 					var membresia = Integer.parseInt(consola.nextLine());
 					cliente = new Cliente(id,nombre,apellido,membresia);
 					clienteServicio.guardarCliente(cliente);
-                    logger.info("\nNuevo Cliente : {}", cliente);
+					logger.info("\nNuevo Cliente : {}", cliente);
 				}
 			}
 			case 5 ->{
@@ -118,10 +117,10 @@ public class ZonaFitApplication implements CommandLineRunner {
 				var id = Integer.parseInt(consola.nextLine());
 				var cliente = clienteServicio.buscarClientePorId(id);
 				if (cliente == null){
-                    logger.info("\nNo existe el cliente a eliminar: {}", cliente);
+					logger.info("\nNo existe el cliente a eliminar: {}", cliente);
 				}else{
 					clienteServicio.eliminarCliente(cliente);
-                    logger.info("\nCliente eliminado: {}", cliente);
+					logger.info("\nCliente eliminado: {}", cliente);
 				}
 			}
 			case 6 ->{
